@@ -56,9 +56,24 @@ const AutoComplete: FC<Props> = ({ suggestions, onSearch, value, isLoading }) =>
                     {suggestions.length !== 0 && isLoading === false && (
                         <ul className="suggestions">
                             {suggestions.map((suggestion, index) => {
+                                let string = suggestion.substr(
+                                    0,
+                                    suggestion.toLowerCase().indexOf(value.toLowerCase())
+                                );
+                                let endString = suggestion.substr(
+                                    suggestion.toLowerCase().indexOf(value.toLowerCase()) +
+                                    value.length
+                                );
+                                let highlightedText = suggestion.substr(
+                                    suggestion.toLowerCase().indexOf(value.toLowerCase()),
+                                    value.length)
                                 return (
                                     <li className={index === activeSuggestionIndex ? 'suggestion-active' : ''} key={suggestion} onClick={onClick}>
-                                        {suggestion}
+                                        {string}
+                                        <span style={{ backgroundColor: '#FFFF00' }}>
+                                            {highlightedText}
+                                        </span>
+                                        {endString}
                                     </li>
                                 );
                             })}

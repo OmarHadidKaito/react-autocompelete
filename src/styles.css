@@ -10,7 +10,7 @@ body {
   background: hsla(218, 100%, 42%, 1);
   background: linear-gradient(
     180deg,
-    hsla(218, 100%, 42%, 0.6) 0%,
+    hsl(58, 100%, 42%) 0%,
     hsla(0, 0%, 98%, 1) 50%
   );
   height: 100vh;
@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 8rem;
 }
 
 .wrapper h2 {
@@ -45,6 +45,8 @@ input {
 }
 
 .suggestions {
+  display: flex;
+  flex-direction: column;
   border: 1px solid hsla(218, 100%, 42%, 0.5);
   border-top-width: 0;
   list-style: none;
@@ -62,7 +64,7 @@ input {
 }
 
 .suggestions::-webkit-scrollbar-thumb {
-  background-color: hsla(218, 100%, 42%, 1);
+  background-color: rgb(214, 207, 0);
 }
 
 .suggestions li {
